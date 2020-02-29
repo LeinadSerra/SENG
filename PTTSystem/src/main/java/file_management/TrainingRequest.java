@@ -5,10 +5,29 @@
  */
 package file_management;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Daniel
  */
-public class TrainingRequest {
+public class TrainingRequest implements Serialization{
+    
+    private Staff staff;
+    private List<String> courses = new ArrayList<String>();
+    
+    public void MakeRequest(Staff staff, ArrayList<String> courses){
+        this.staff = staff;
+        this.courses  = courses;
+    }
+    
+    public Staff getStaff(){
+        return staff;
+    }
+    
+    public List<String> getTraining(){
+        return courses;
+    }
     
 }

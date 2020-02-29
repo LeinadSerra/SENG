@@ -47,11 +47,7 @@ public class ListOfStaff {
             ObjectInputStream saved_list = new ObjectInputStream(new FileInputStream("stafflist.txt"));
             ArrayList<Staff> staff_list = (ArrayList<Staff>) saved_list.readObject();
             saved_list.close();
-            System.out.println(staff_list.get(0).getName());
-            //Testing porpuses
-            for(Staff s : staff_list ){
-                System.out.println(s.getName());
-            }
+            
             }    
         catch(Exception e){
             System.out.println(e);
