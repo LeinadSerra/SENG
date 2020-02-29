@@ -9,6 +9,6 @@ package file_management;
  *
  * @author Daniel
  */
-public class FileManagement {
+public class TeachingRequirements {
     
 }

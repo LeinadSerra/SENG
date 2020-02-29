@@ -5,11 +5,19 @@
  */
 package gui;
 
+import file_management.ListOfStaff;
+import file_management.Staff;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Daniel
  */
-public class user_selection extends javax.swing.JFrame {
+public class user_selection extends javax.swing.JFrame{
 
     /**
      * Creates new form user_selection
@@ -118,7 +126,7 @@ public class user_selection extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]){
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -141,7 +149,20 @@ public class user_selection extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(user_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        List<String> courses = new ArrayList<>();
+        courses.add("Biology");
+        courses.add("Math");
+        Staff staff1 = new Staff("Daniel", 26, courses);
+        Staff staff2 = new Staff("Boris", 23, courses);
+        ListOfStaff list1 = new ListOfStaff(); 
+        list1.addStaff(staff1);
+        list1.addStaff(staff2);
+        list1.makeFile();
+        list1.getStaff();
+       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
