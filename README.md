@@ -1,2 +1,0 @@
-# SENG
-SE assessed exercise
