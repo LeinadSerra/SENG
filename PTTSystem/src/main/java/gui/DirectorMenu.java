@@ -7,6 +7,8 @@ package gui;
 
 import java.awt.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 /**
  *
@@ -248,7 +250,11 @@ public class DirectorMenu extends javax.swing.JFrame {
     private void btn_readActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_readActionPerformed
         // TODO add your handling code here:
         ProcessBuilder read_pb = new ProcessBuilder("Notepad.exe", "TR_List.txt");//opens .txt file from project directory
-        read_pb.start();
+        try {
+            read_pb.start();
+        } catch (IOException ex) {
+            Logger.getLogger(DirectorMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_readActionPerformed
 
     private void btn_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendActionPerformed
