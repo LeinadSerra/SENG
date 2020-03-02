@@ -8,12 +8,13 @@ package file_management;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.AbstractListModel;
 
 /**
  *
  * @author Daniel
  */
-public class Staff implements Serializable{ //Uses serializable to save objects in .dat files
+public class Staff extends AbstractListModel implements Serializable{ //Uses serializable to save objects in .dat files
     
 private final String name;
 private final int age;
@@ -44,6 +45,17 @@ private int counter;
     }
     
     public int getCoursesSize(){
+        return courses.size();
+    }
+    
+    @Override
+    public Object getElementAt(int index){
+        String c = courses.get(index);
+        return c;
+    }
+    
+    @Override
+    public int getSize(){
         return courses.size();
     }
 }

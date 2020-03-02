@@ -6,6 +6,9 @@
 package gui;
 
 import file_management.ListOfStaff;
+import file_management.Staff;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,8 +28,13 @@ public class StaffMenu extends javax.swing.JFrame {
      staffNumber.setText("");
      
      //Reading staff list 
-     ListOfStaff staff_list = new ListOfStaff(ListOfStaff.getStaff());
-     staffList.setModel(staff_list);
+     ListOfStaff model_staff_list = new ListOfStaff(ListOfStaff.getStaff());
+     staffList.setModel(model_staff_list);
+     
+     //Getting a manipulable list of staff 
+     List<Staff> staff_list = new ArrayList<Staff>();
+     staff_list = ListOfStaff.getStaff();
+     trList.setModel(staff_list.get(0));
      
     }
 
@@ -48,9 +56,11 @@ public class StaffMenu extends javax.swing.JFrame {
         ageLabel = new javax.swing.JLabel();
         staffNumber = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        trList = new javax.swing.JList<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Staff");
+        setResizable(false);
 
         jScrollPane1.setViewportView(staffList);
 
@@ -66,12 +76,7 @@ public class StaffMenu extends javax.swing.JFrame {
 
         staffNumber.setText("jLabel6");
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(trList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,10 +171,10 @@ public class StaffMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private static javax.swing.JList<String> staffList;
     private static javax.swing.JLabel staffNumber;
+    private static javax.swing.JList<String> trList;
     // End of variables declaration//GEN-END:variables
 }

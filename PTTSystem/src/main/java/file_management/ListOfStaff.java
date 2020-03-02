@@ -33,6 +33,7 @@ public class ListOfStaff extends AbstractListModel implements Serializable{
         this.staff = staff;
     }
     
+    @Override
     public Object getElementAt(int index){
         Staff s = staff.get(index);
         return s.getName();
@@ -75,6 +76,7 @@ public class ListOfStaff extends AbstractListModel implements Serializable{
         System.out.println(staff.get(0).getName());
     }
     
+    @Override
     public int getSize(){
         return staff.size();
     }
