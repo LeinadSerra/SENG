@@ -8,6 +8,7 @@ gui\user_selection$3.class
 gui\DirectorMenu.class
 gui\DirectorMenu$2.class
 gui\user_selection$4.class
+gui\PttDirMenu$4.class
 gui\AdminMenu$1.class
 gui\AdminMenu.class
 gui\DirectorMenu$7.class
@@ -21,7 +22,6 @@ gui\user_selection$2.class
 gui\DirectorMenu$6.class
 file_management\TeachingRequirements.class
 gui\DirectorMenu$4.class
-gui\StaffMenu$3.class
 gui\DirectorMenu$1.class
 gui\PttDirMenu$2.class
 gui\TrainingMenu$2.class
@@ -30,6 +30,7 @@ gui\AdminMenu$3.class
 gui\PttDirMenu.class
 gui\TrainingMenu$3.class
 gui\TrainingMenu.class
+file_management\ListArray.class
 file_management\Staff.class
 gui\user_selection.class
 file_management\ListOfStaff.class
