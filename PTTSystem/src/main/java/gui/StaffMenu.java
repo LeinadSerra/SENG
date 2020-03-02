@@ -9,6 +9,7 @@ import file_management.ListOfStaff;
 import file_management.Staff;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,19 +24,13 @@ public class StaffMenu extends javax.swing.JFrame {
         initComponents();
         
      //Init with blank text 
-     
      ageLabel.setText("");
      staffNumber.setText("");
+     genderLabel.setText("");
      
      //Reading staff list 
      ListOfStaff model_staff_list = new ListOfStaff(ListOfStaff.getStaff());
-     staffList.setModel(model_staff_list);
-     
-     //Getting a manipulable list of staff 
-     List<Staff> staff_list = new ArrayList<Staff>();
-     staff_list = ListOfStaff.getStaff();
-     trList.setModel(staff_list.get(0));
-     
+     staffList.setModel(model_staff_list); 
     }
 
     /**
@@ -57,18 +52,34 @@ public class StaffMenu extends javax.swing.JFrame {
         staffNumber = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         trList = new javax.swing.JList<>();
+        jLabel5 = new javax.swing.JLabel();
+        genderLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Staff");
         setResizable(false);
 
+        staffList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                staffListMouseClicked(evt);
+            }
+        });
+        staffList.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                staffListKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                staffListKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(staffList);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Staff Members");
 
         jLabel2.setText("Employee Number:");
 
-        jLabel3.setText("Courses:");
+        jLabel3.setText("Skills:");
 
         jLabel4.setText("Age:");
 
@@ -77,6 +88,10 @@ public class StaffMenu extends javax.swing.JFrame {
         staffNumber.setText("jLabel6");
 
         jScrollPane2.setViewportView(trList);
+
+        jLabel5.setText("Gender:");
+
+        genderLabel.setText("jLabel6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,8 +115,12 @@ public class StaffMenu extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 97, Short.MAX_VALUE)))
+                                .addComponent(ageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(genderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -116,11 +135,15 @@ public class StaffMenu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(staffNumber))
-                        .addGap(37, 37, 37)
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(genderLabel))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(ageLabel))
-                        .addGap(44, 44, 44)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -129,6 +152,37 @@ public class StaffMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void staffListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffListMouseClicked
+        
+        List<Staff> staff_list = new ArrayList<Staff>();
+        staff_list = ListOfStaff.getStaff();
+        int index = staffList.getSelectedIndex();
+        trList.setModel(staff_list.get(index));
+        ageLabel.setText(Integer.toString(staff_list.get(index).getAge()));
+        genderLabel.setText(staff_list.get(index).getGender());
+        staffNumber.setText(Integer.toString(staff_list.get(index).getNumber()));
+    }//GEN-LAST:event_staffListMouseClicked
+
+    private void staffListKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_staffListKeyPressed
+        List<Staff> staff_list = new ArrayList<Staff>();
+        staff_list = ListOfStaff.getStaff();
+        int index = staffList.getSelectedIndex();
+        trList.setModel(staff_list.get(index));
+        ageLabel.setText(Integer.toString(staff_list.get(index).getAge()));
+        genderLabel.setText(staff_list.get(index).getGender());
+        staffNumber.setText(Integer.toString(staff_list.get(index).getNumber()));
+    }//GEN-LAST:event_staffListKeyPressed
+
+    private void staffListKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_staffListKeyReleased
+        List<Staff> staff_list = new ArrayList<Staff>();
+        staff_list = ListOfStaff.getStaff();
+        int index = staffList.getSelectedIndex();
+        trList.setModel(staff_list.get(index));
+        ageLabel.setText(Integer.toString(staff_list.get(index).getAge()));
+        genderLabel.setText(staff_list.get(index).getGender());
+        staffNumber.setText(Integer.toString(staff_list.get(index).getNumber()));
+    }//GEN-LAST:event_staffListKeyReleased
 
     /**
      * @param args the command line arguments
@@ -163,14 +217,17 @@ public class StaffMenu extends javax.swing.JFrame {
                 new StaffMenu().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JLabel ageLabel;
+    private static javax.swing.JLabel genderLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private static javax.swing.JList<String> staffList;

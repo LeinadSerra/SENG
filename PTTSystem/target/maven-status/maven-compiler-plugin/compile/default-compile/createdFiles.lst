@@ -1,4 +1,5 @@
 gui\DirectorMenu$5.class
+gui\StaffMenu$2.class
 gui\PttDirMenu$1.class
 gui\AdminMenu$2.class
 gui\PttDirMenu$3.class
@@ -21,6 +22,7 @@ gui\user_selection$2.class
 gui\DirectorMenu$6.class
 file_management\TeachingRequirements.class
 gui\DirectorMenu$4.class
+gui\StaffMenu$3.class
 gui\DirectorMenu$1.class
 gui\PttDirMenu$2.class
 gui\TrainingMenu$2.class

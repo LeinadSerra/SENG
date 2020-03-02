@@ -24,6 +24,41 @@ public class user_selection extends javax.swing.JFrame{
      */
     public user_selection() {
         initComponents();
+        Staff staff0 = new Staff("Daniel", 26, "Male", 2321);
+        Staff staff1 = new Staff("Xinrui", 23, "Male", 3245);
+        Staff staff2 = new Staff("Bruham", 23, "Male", 6343);
+        Staff staff3 = new Staff("Miruna", 24, "Female", 9403);
+        Staff staff4 = new Staff("Pearl", 33, "Female", 4638);
+        Staff staff5 = new Staff("Rose", 34, "Female", 5193);
+        Staff staff6 = new Staff("Bob", 50, "Male", 9862);
+        Staff staff7 = new Staff("Patrick", 50, "Male", 8674);
+        Staff staff8 = new Staff("Sandy", 50, "Female", 3820);
+        Staff staff9 = new Staff("Steven", 26, "Male", 8938);
+        Staff staff10 = new Staff("Connie", 24, "Female", 8926);
+        staff0.addCourse("Declaration of Criminal Convictions");
+        staff1.addCourse("Completed Health Quetionnaire");
+        staff2.addCourse("A Minimum of 2 Years Experience in Teaching or Relevant field");
+        staff3.addCourse("Well-organized with Excellent Leadership Abilities");
+        staff4.addCourse("In-depth Knowledge of Teaching Methods and Legal Educational Procedures");
+        staff5.addCourse("Declaration of Criminal Convictions");
+        staff6.addCourse("Exceptional Interpersonal and Presentation Skills");
+        staff7.addCourse("");
+        staff8.addCourse("In-depth Knowledge of Teaching Methods and Legal Educational Procedures");
+        staff9.addCourse("Completed Health Quetionnaire");
+        staff10.addCourse("In-depth Knowledge of Teaching Methods and Legal Educational Procedures");
+        ListOfStaff list = new ListOfStaff(); 
+        list.addStaff(staff0);
+        list.addStaff(staff1);
+        list.addStaff(staff2);
+        list.addStaff(staff3);
+        list.addStaff(staff4);
+        list.addStaff(staff5);
+        list.addStaff(staff6);
+        list.addStaff(staff7);
+        list.addStaff(staff8);
+        list.addStaff(staff9);
+        list.addStaff(staff10);
+        list.makeFile();
     }
 
     /**
@@ -41,7 +76,7 @@ public class user_selection extends javax.swing.JFrame{
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PTT System");
 
         jLabel1.setText("Welcome to PTT System");
@@ -152,17 +187,7 @@ public class user_selection extends javax.swing.JFrame{
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        List<String> courses = new ArrayList<>();
-        courses.add("Biology");
-        courses.add("Math");
-        Staff staff1 = new Staff("Daniel", 26, courses);
-        Staff staff2 = new Staff("Boris", 23, courses);
-        ListOfStaff list1 = new ListOfStaff(); 
-        list1.addStaff(staff1);
-        list1.addStaff(staff2);
-        list1.makeFile();
-        list1.getStaff();
-       
+           
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
