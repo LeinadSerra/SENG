@@ -200,6 +200,8 @@ public class TrainingMenu extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(TrainingMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        JOptionPane.showMessageDialog(rootPane, "The .txt File containing Training Request is ready and needs your perusal!", "Important Message for the Administrator!", 1);
     }//GEN-LAST:event_saveButtonActionPerformed
 
     /**
