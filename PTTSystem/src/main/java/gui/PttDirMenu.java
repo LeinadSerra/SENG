@@ -14,7 +14,7 @@ public class PttDirMenu extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -24,6 +24,7 @@ public class PttDirMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("PTT Director Menu");
 
         jLabel1.setText("Please open the request list first:");
 
@@ -90,27 +91,27 @@ public class PttDirMenu extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
     //when the "Open Request List" is clicked, it will print the Teaching Requirements List to be reviewed
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        enableButtons();
-        try { FileReader fr = new FileReader("C:\\Users\\Miruna Lazar\\Downloads\\SENG-master (1)\\SENG-master\\PTTSystem\\src\\TeachingRequirements.txt"); 
+        try { FileReader fr = new FileReader("TR_List.txt"); 
            int i; 
            while ((i=fr.read()) != -1) 
            System.out.print((char) i ); 
         } catch(Exception e) {  
           }    
-    }                                        
+    }//GEN-LAST:event_jButton2ActionPerformed
     //when the "Open Request List" is clicked, a notification that the request is approved is printed 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
          String data = "Your request was approved!";
         write(data);
-    }                                        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String data = "Your request was rejected!";
         write(data);
-    }                                        
+    }//GEN-LAST:event_jButton1ActionPerformed
     //enable buttons
     private void enableButtons() {
        jButton3.setEnabled(true);
@@ -126,7 +127,7 @@ public class PttDirMenu extends javax.swing.JFrame {
     private static void write(String data) {
         OutputStream os = null;
         try {
-            os = new FileOutputStream(new File("C:\\Users\\Miruna Lazar\\Downloads\\SENG-master (1)\\SENG-master\\PTTSystem\\src\\Notification.txt"));
+            os = new FileOutputStream(new File("Notification.txt"));
             os.write(data.getBytes(), 0, data.length());
         } catch (IOException e) {
             e.printStackTrace();
@@ -149,11 +150,11 @@ public class PttDirMenu extends javax.swing.JFrame {
 
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 }
