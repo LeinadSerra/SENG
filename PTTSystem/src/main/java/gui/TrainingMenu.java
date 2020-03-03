@@ -181,8 +181,26 @@ public class TrainingMenu extends javax.swing.JFrame {
             
             String[] rowValues = {proRem, TRRem};
             
-            bufTable.addRow(rowValues);
-            jTable2.setModel(bufTable);
+            int counter = bufTable.getRowCount();
+            int loop = 0;
+            
+            for(int i = 0; i < counter; i++){
+                
+                boolean c1 = bufTable.getValueAt(i, 0).equals(proRem);
+                boolean c2 = bufTable.getValueAt(i, 1).equals(TRRem);
+                
+                if(c1==true && c2==true){
+                    JOptionPane.showMessageDialog(rootPane, "Existing!", "Error...", 1) ;
+                    loop += 1;
+                }
+                
+            }
+            
+            if(loop == 0){
+                bufTable.addRow(rowValues);
+                jTable2.setModel(bufTable);
+            }
+            
             
             //bufJList3.addElement(proRem);
             //bufJList3.addElement(TRRem);
@@ -200,6 +218,8 @@ public class TrainingMenu extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(TrainingMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        JOptionPane.showMessageDialog(rootPane, "The .txt File containing Training Request is ready and needs your perusal!", "Important Message for the Administrator!", 1);
     }//GEN-LAST:event_saveButtonActionPerformed
 
     /**
