@@ -1,5 +1,11 @@
 Professor	Course
 
-Daniel,A Minimum of 2 Years Experience in Teaching or Relevant field,
-Xinrui,Bachelor�s Degree in Teaching or Relevant field,
-Pearl,Declaration of Criminal Convictions,
+Miruna,Exceptional Interpersonal and Presentation Skills,
+Xinrui,In-depth Knowledge of Teaching Methods and Legal Educational Procedures,
+Rose,In-depth Knowledge of Teaching Methods and Legal Educational Procedures,
+Bruham,Completed Health Quetionnaire,
+Patrick,Outstanding Written and Verbal Communication Skills,
+Pearl,Outstanding Written and Verbal Communication Skills,
+Xinrui,Exceptional Interpersonal and Presentation Skills,
+Steven,Exceptional Interpersonal and Presentation Skills,
+Xinrui,In-depth Knowledge of Teaching Methods and Legal Educational Procedures,
